@@ -1,0 +1,72 @@
+@mixin clip-path($clip)
+  -webkit-clip-path: $clip
+  -moz-clip-path: $clip
+  -ms-clip-path: $clip
+  clip-path: $clip
+
+ul.list-inline
+  li
+    width: 33%
+
+h3
+  margin: 0
+
+h5
+  margin: 4px 7px
+  color: #999
+  font-weight: normal
+
+img
+  width: 72px
+
+.panel
+  background-color: #EFEFEF
+
+.mask
+  @include clip-path(circle(36px at 36px 36px))
+
+.initial
+  background-color: orange
+  font-size: 42px
+  color: #FFF
+  width: 72px
+  height: 72px
+  line-height: 72px
+  text-align: center
+
+.stat
+  font-size: 11px
+  color: #CCC
+  text-align: right
+  margin: -6px 0 0 0
+
+.revenue
+  text-align: right
+  font-size: 20px
+  color: #00BF00
+  font-weight: bold
+  margin: 0
+
+.impressions
+  font-size: 18px
+  color: #BF0000
+  font-weight: bold
+  margin-bottom: -6px
+
+.conversions
+  font-size: 18px
+  color: #0000BF
+  font-weight: bold
+  margin-bottom: -6px
+
+.occupation
+  text-transform: capitalize
+
+.loading
+  img
+    height: 31px
+    width: 31px
+
+.chart
+  font-size: 14px
+  color: #999

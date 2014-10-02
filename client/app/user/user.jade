@@ -1,0 +1,37 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+.container
+  .row
+    .col-lg-12
+      .loading.text-center(ng-hide="loaded")
+        img(src="assets/images/loading.gif")
+        .text Loading Users
+      ul.list-inline
+        li(ng-repeat="user in users")
+          .panel.panel-default
+            .panel-body
+              .row
+                .col-sm-3
+                  .avatar(ng-show="user.avatar")
+                    img.mask(ng-src="{{user.avatar}}")
+                  .initial.mask(ng-hide="user.avatar")
+                    | {{ user.name.charAt(0)}}
+                .col-sm-9.hidden-xs.hidden-sm
+                  h3 {{user.name}}
+                  .occupation
+                    h5 {{user.occupation}}
+              .row
+                .col-sm-8.hidden-xs.hidden-sm.chart
+                  cjs-line(dataset="user.chart" width="240" height="60" options="chartOptions")
+                  .text-center
+                    | Conversions
+                    | {{ user.from}} to {{user.to}}
+                .col-sm-4
+                  .stat
+                    .impressions {{user.impressions.length}}
+                    | impressions
+                  .stat
+                    .conversions {{user.conversions.length}}
+                    | conversions
+                  .revenue
+                    | ${{ user.revenue | number:0 }}

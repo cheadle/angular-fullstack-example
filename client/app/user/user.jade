@@ -17,7 +17,7 @@ div(ng-include='"components/navbar/navbar.html"')
                   h3 {{user.name}}
                   .occupation
                     h5 {{user.occupation}}
-              .row
+              .row(ng-show="user.loaded")
                 .col-sm-8.hidden-xs.hidden-sm.chart
                   cjs-line(dataset="user.chart" width="240" height="60" options="chartOptions")
                   .text-center

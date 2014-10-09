@@ -50,5 +50,6 @@ angular.module 'demoApp'
       _.each conversionsPerDay, (conversion) ->
         user.chart.datasets[0].data.push conversion.length
         user.chart.labels.push ''
+      user.loaded = true
 
 
